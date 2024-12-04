@@ -1,0 +1,356 @@
+* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Barra de Navegación */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    background-color: #30643d;
+    color: #fff;
+    padding: 16px 64px;
+    position : relative;
+}
+
+.logo h3{
+    margin: 0;  
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    transition: all 0.5s ease;
+    gap: 1rem;
+    justify-content: flex-end;  
+}
+
+.nav-links li {
+    margin-left: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    padding: 8px 24px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover{
+    background-color: #404140;
+}
+
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    cursor:pointer;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-icon .line{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+/* Responsivo */
+@media(max-width: 768px) {
+    .navbar {
+        padding: 16px;
+    }
+    .menu-icon {
+        display: flex;
+    }
+    .nav-links {
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column-reverse;
+        background-color: #2b2c21;
+        text-align: center;
+        transition: height 0.5s ease;
+    }
+    .nav-links li {
+        margin: 0;
+        padding: 20px 0;
+        width: 100%;
+    }
+    .nav-links a {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        height: 100vh;
+    }
+    #menu-toggle:checked + .menu-icon .line:nth-child(1) {
+        transform: rotate(45deg) translate(15px, 3px);
+    }
+    #menu-toggle:checked + .menu-icon .line:nth-child(2) {
+        transform: scale(0);
+    }
+    #menu-toggle:checked + .menu-icon .line:nth-child(3) {
+        transform: rotate(-45deg) translate(15px, -4px);
+    }
+}
+
+/* Sección Principal (Hero) */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('hero-background.jpg') center/cover no-repeat;
+    color: #fff;
+    height: 50vh;
+    text-align: center;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 2rem;
+    border:3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0  25px #222;
+    backdrop-filter: blur (10px);
+    color: #000; /* Cambio a texto negro */
+    
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    margin-top: 1rem;
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+/* Sección de Tarjetas */
+.cards-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+    background-color: #28a745;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #28a745;
+}
+
+.card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .cards-section {
+        padding: 2rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+}
+
+/* Sección de Sugerencias (Formulario) */
+.sugerencias {
+    background-color: #f4f4f4;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.sugerencias h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.sugerencias p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.form-sugerencias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-sugerencias label {
+    align-self: flex-start;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-sugerencias input,
+.form-sugerencias textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.form-sugerencias button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-sugerencias button:hover {
+    background-color: #218838;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sugerencias {
+        padding: 2rem;
+    }
+
+    .form-sugerencias {
+        padding: 1.5rem;
+    }
+
+    .form-sugerencias input,
+    .form-sugerencias textarea {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .form-sugerencias button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+#mensajeAgradecimiento {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}

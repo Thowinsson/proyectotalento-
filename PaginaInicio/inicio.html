@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energías Renovables - Futuro Sostenible</title>
+    <link rel="stylesheet" href="estilosInicio.css">
+    <script src="../PaginaInicio/incio.js" defer></script> <!-- Aquí agregamos el archivo de JS -->
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <h3 class="nombre-pagina">🌞 FuturoSostenible</h3>
+        </div>
+        <nav>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../PaginaInicio/inicio.html">Inicio</a></li>
+                <li><a href="../PaginaImpacto/impacto.html">Impacto</a></li>
+                <li><a href="../PaginaDatos/datos.html">Datos</a></li>
+                <li><a href="../PaginaCalculadora/Calculadora.html">Calculadora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1>El Futuro es Renovable</h1>
+            <p>Juntos hacia un mundo más limpio y sostenible</p>
+            <a href="../PaginaCalculadora/Calculadora.html" class="cta-button">Calcula tu Impacto</a>
+        </div>
+    </main>
+
+    <!-- Sección de Tarjetas -->
+    <section class="cards-section">
+        <div class="card">
+            <span class="icon">📈</span>
+            <h3>+1000 TWh</h3>
+            <p>Energía Solar Generada en 2022</p>
+        </div>
+        <div class="card">
+            <span class="icon">⏳</span>
+            <h3>-30%</h3>
+            <p>Reducción de Emisiones</p>
+        </div>
+        <div class="card">
+            <span class="icon">🎧</span>
+            <h3>+2000</h3>
+            <p>Comunidades Beneficiadas</p>
+        </div>
+    </section>
+
+    <!-- Sección de Sugerencias (Formulario) -->
+    <section class="sugerencias">
+        <h2>¡Déjanos tu sugerencia!</h2>
+        <p>Queremos saber tu opinión para mejorar y hacer un mundo más sostenible.</p>
+        <form id="formSugerencias" action="#" method="POST" class="form-sugerencias">
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            
+            <label for="sugerencia">Tu Sugerencia:</label>
+            <textarea id="sugerencia" name="sugerencia" placeholder="Escribe tu sugerencia aquí..." required></textarea>
+            
+            <button type="submit" class="btn-enviar">Enviar Sugerencia</button>
+        </form>
+
+        <!-- Mensaje de agradecimiento -->
+        <div id="mensajeAgradecimiento" style="display: none; color: rgb(103, 231, 103); margin-top: 20px;">
+            ¡Gracias por tu sugerencia! Mejoraremos en ello.
+        </div>
+    </section>
+    
+</body>
+</html>
+

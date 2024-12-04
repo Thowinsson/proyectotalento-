@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <canvas id="graficoBarras" width="400" height="200"></canvas>
+
+    <script>
+        const ctx = document.getElementById('graficoBarras').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Eólica', 'Solar', 'Hídrica', 'Biomasa', 'Geotérmica'], // Etiquetas de las fuentes de energía
+                datasets: [{
+                    label: 'Energía Producida (GWh)',
+                    data: [300, 250, 150, 100, 50], // Aquí van los datos de producción de energía
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Color de las barras
+                    borderColor: 'rgba(75, 192, 192, 1)', // Color de los bordes de las barras
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true, // Empezar desde cero en el eje Y
+                        title: {
+                            display: true,
+                            text: 'Producción de Energía (GWh)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

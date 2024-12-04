@@ -1,0 +1,44 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Impacto Energético</title>
+    <link rel="stylesheet" href="estilosCalculadora.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <h3 class="nombre-pagina">🌞 FuturoSostenible</h3>
+        </div>
+        <nav>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../PaginaInicio/inicio.html">Inicio</a></li>
+                <li><a href="../PaginaImpacto/impacto.html">Impacto</a></li>
+                <li><a href="../PaginaDatos/datos.html">Datos</a></li>
+                <li><a href="../PaginaCalculadora/Calculadora.html">Calculadora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Calculadora -->
+    <section id="calculadora" class="calculadora">
+        <div class="contenedor-calculadora">
+            <h1>Calcula tu impacto energético</h1>
+            <label for="consumo">Ingrese su consumo mensual en KWh:</label>
+            <input type="number" id="consumo" name="consumo" required placeholder="Ejemplo: 300">
+            <button onclick="calcularImpacto()">Calcular</button>
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script src="Calculadora.js"></script>
+</body>
+</html>
+
